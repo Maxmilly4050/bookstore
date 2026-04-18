@@ -7,6 +7,7 @@
         <h2 class="mb-3">{{ book.title }}</h2>
         <p class="mb-2">Author: {{ book.author }}</p>
         <p class="mb-2">Price: ${{ book.price }}</p>
+        <p class="mb-2">Rating: {{ book.rating }}</p>
         <p class="mb-3">Description: {{ book.description }}</p>
         <a href="{% url 'home' %}" class="btn btn-secondary">Back to Books</a>
     </div>
