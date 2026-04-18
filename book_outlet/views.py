@@ -7,3 +7,7 @@ def home(request):
 
 def about(request):
     return render(request, 'book_outlet/about.html')
+
+def book_detail(request, book_id):
+    book = Book.objects.get(id=book_id)
+    return render(request, 'book_outlet/book_details.html', {'book': book})
