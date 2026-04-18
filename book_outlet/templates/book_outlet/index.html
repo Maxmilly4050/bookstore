@@ -5,7 +5,7 @@
 {% block content %}
     <h2 class="mb-2">All Books</h2>
     <p class="mb-4">Find your next great read!</p>
-    <div class="book-list bg-dark bg-gradient text-white rounded p-4 shadow">
+    <div class="book-list bg-secondary bg-gradient text-white rounded p-4 shadow">
         {% for book in books %}
             <a href="{% url 'book_detail' book.slug %}" class="book-item d-block border-bottom border-secondary pb-3 mb-3 text-decoration-none text-white">
                 <h3>{{ book.title }}</h3>
@@ -13,5 +13,11 @@
                 <p>Price: ${{ book.price }}</p>
             </a>
         {% endfor %}
+    </div>
+    <div class="book-stats mt-4 bg-primary bg-gradient text-white rounded p-4 shadow">
+        <h3 class="mb-3">Book Statistics</h3>
+        <p>Total Books: {{ num_books }}</p>
+        <p>Average Price: ${{ book_stats.avg_price|floatformat:2 }}</p>
+        <p>Total Books: {{ book_stats.total_books }}</p>
     </div>
 {% endblock %}
