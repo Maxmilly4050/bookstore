@@ -3,14 +3,15 @@
 {% block title %}All Books{% endblock %}
 
 {% block content %}
-    <h2>All Books</h2>
-    <p>Find your next great read!</p>
-    <div class="book-list">
+    <h2 class="mb-2">All Books</h2>
+    <p class="mb-4">Find your next great read!</p>
+    <div class="book-list bg-dark bg-gradient text-white rounded p-4 shadow">
         {% for book in books %}
-            <div class="book-item">
+            <div class="book-item border-bottom border-secondary pb-3 mb-3">
                 <h3>{{ book.title }}</h3>
                 <p>Author: {{ book.author }}</p>
                 <p>Price: ${{ book.price }}</p>
             </div>
         {% endfor %}
+    </div>
 {% endblock %}
