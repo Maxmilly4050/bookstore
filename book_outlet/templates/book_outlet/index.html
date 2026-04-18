@@ -5,4 +5,12 @@
 {% block content %}
     <h2>All Books</h2>
     <p>Find your next great read!</p>
+    <div class="book-list">
+        {% for book in books %}
+            <div class="book-item">
+                <h3>{{ book.title }}</h3>
+                <p>Author: {{ book.author }}</p>
+                <p>Price: ${{ book.price }}</p>
+            </div>
+        {% endfor %}
 {% endblock %}
