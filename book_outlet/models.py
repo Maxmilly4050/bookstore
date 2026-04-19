@@ -9,6 +9,7 @@ class Book(models.Model):
     stock = models.IntegerField()
     slug = models.SlugField(default="", null=False, db_index=True, editable=False)
     description = models.TextField(blank=True)
+    published_countries = models.ManyToManyField('Country', blank=True)
 
     def __str__(self):
         return self.title
@@ -32,3 +33,10 @@ class Address(models.Model):
     
     class Meta:
         verbose_name_plural = "Addresses"
+
+class Country(models.Model):
+    name = models.CharField(max_length=100)
+    code = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.name
