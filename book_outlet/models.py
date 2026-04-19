@@ -7,7 +7,7 @@ class Book(models.Model):
     author = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     stock = models.IntegerField()
-    slug = models.SlugField(default="", null=False, db_index=True, blank=True)
+    slug = models.SlugField(default="", null=False, db_index=True, editable=False)
     description = models.TextField(blank=True)
 
     def __str__(self):
